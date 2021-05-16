@@ -1,12 +1,12 @@
 <template>
   <div class="row fixed-bottom">
     <div class="col-md-6">
-      <label class="m-2">Ali <span>Erdoğan</span></label>
+      <label class="m-2 badge badge-dark">Ali Erdoğan |Ürün İşlemleri</label>
     </div>
     <div class="col-md-6 text-right">
       <span class="navbar-text navbar-nav my-2 my-lg-0 mr-3">
         <strong>Alış Tutarı : </strong>
-        <span class="badge badge-danger">{{
+        <span class="badge badge-success">{{
           getTradeResult.purchase | currency
         }}</span>
       </span>
@@ -18,9 +18,15 @@
       </span>
       <span class="navbar-text navbar-nav my-2 my-lg-0 mr-3">
         <strong>Toplam : </strong>
-        <span class="badge badge-danger">{{
-          getTradeResult.balance | currency
-        }}</span>
+        <span
+          class="badge"
+          v-bind:class="{
+            'badge-success': getTradeResult.balance > 0,
+            'badge-primary': getTradeResult.balance == 0,
+            'badge-danger': getTradeResult.balance < 0
+          }"
+          >{{ getTradeResult.balance | currency }}</span
+        >
       </span>
     </div>
   </div>

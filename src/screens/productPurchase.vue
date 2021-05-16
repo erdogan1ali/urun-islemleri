@@ -1,54 +1,61 @@
 <template>
   <div class="container">
     <Loading v-if="loading == true" />
-    <div class="row" v-else>
-      <div class="col-6 offset-3 mb-5 card mt-5 shadow">
-        <div class="card-body">
-          <cardHeader text="Ürün İşlemleri"></cardHeader>
-          <form>
-            <div class="mb-3">
-              <label for="productName" class="form-label">Ürün Adı</label>
-              <input
-                v-model="product.Name"
-                type="text"
-                id="productName"
-                class="form-control"
-              />
-            </div>
-            <div class="mb-3">
-              <label for="productQuantity" class="form-label">Adet</label>
-              <input
-                v-model="product.Quantity"
-                type="number"
-                id="productQuantity"
-                class="form-control"
-              />
-            </div>
-            <div class="mb-3">
-              <label for="productPrice" class="form-label">Fiyat</label>
-              <input
-                v-model="product.Price"
-                type="number"
-                id="productPrice"
-                class="form-control number"
-              />
-            </div>
-            <div class="mb-3">
-              <label for="productDescription" class="form-label"
-                >Açıklama</label
-              >
-              <textarea
-                v-model="product.Description"
-                type="text"
-                id="productDescription"
-                class="form-control"
-              ></textarea>
-            </div>
-            <hr />
-            <button type="button" class="btn btn-primary" @click="saveProduct">
-              Kaydet
+    <div class="row justify-content-center" v-else>
+      <div class="col-md-12 col-lg-6 mt-5">
+        <div class="card shadow">
+          <div class="card-body">
+            <cardHeader text="Ürün İşlemleri"></cardHeader>
+            <form>
+              <div class="mb-3">
+                <label for="productName" class="form-label">Ürün Adı</label>
+                <input
+                  v-model="product.Name"
+                  type="text"
+                  id="productName"
+                  class="form-control"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="productQuantity" class="form-label">Adet</label>
+                <input
+                  v-model="product.Quantity"
+                  type="number"
+                  id="productQuantity"
+                  class="form-control"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="productPrice" class="form-label">Fiyat</label>
+                <input
+                  v-model="product.Price"
+                  type="number"
+                  id="productPrice"
+                  class="form-control number"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="productDescription" class="form-label"
+                  >Açıklama</label
+                >
+                <textarea
+                  v-model="product.Description"
+                  type="text"
+                  id="productDescription"
+                  class="form-control"
+                ></textarea>
+              </div>
+            </form>
+          </div>
+          <div class="card-footer text-right">
+            <button
+              type="button"
+              class="btn btn-success"
+              @click="saveProduct"
+            >
+              <i class="bi bi-save"></i> Kaydet
             </button>
-          </form>
+          </div>
         </div>
       </div>
     </div>

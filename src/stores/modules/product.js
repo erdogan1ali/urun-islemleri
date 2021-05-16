@@ -57,8 +57,10 @@ const actions = {
                 return false;
             } else {
                 product[0].Quantity -= payload.count;
+                product[0].Total = product[0].Quantity * product[0].Price;
                 Vue.http.patch(api + '/products/' + product[0].Id + '.json', {
-                    Quantity: product[0].Quantity
+                    Quantity: product[0].Quantity,
+                    Total:  product[0].Total
                 })
                     .then((response) => {
                         return true;
