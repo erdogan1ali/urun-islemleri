@@ -1,0 +1,1 @@
+export const api = 'https://urunislemleri-e5796-default-rtdb.firebaseio.com';
